@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>WEB REPORT</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+ <div class="header">
+   <h2> ЗВІТИ З ЛАБОРАТОРНИХ РОБІТ <br> З ДИСЦИПЛІНИ "ІНТЕРНЕТ-ТЕХНОЛОГІЇ ТА ПРОЕКТУВАННЯ WEB-ЗАСТОСУВАНЬ"  </h2>
+   <h3>Студентки групи ІС-13 Лисак Анастасії Олександрівни <img src="../img/profile_ph.jpg" style="width:173px;height:165px;"> </h3>
+ </div>
+
+ <div class="upper-nav">
+   <button type="button" class="lab1">Лабораторна робота №1</button>
+   <button type="button" class="lab2">Лабораторна робота №2</button>
+   <button type="button" class="lab3">Лабораторна робота №3</button>
+   <button type="button" class="lab4">Лабораторна робота №4</button>
+   <button type="button" class="lab5">Лабораторна робота №5</button>
+   <button type="button" class="lab6">Лабораторна робота №6</button>
+   <button type="button" class="lab7">Лабораторна робота №7</button>
+   <button type="button" class="lab8">Лабораторна робота №8</button>
+   <button type="button" class="lab9">Лабораторна робота №9</button>
+ </div>
+
+ <section>
+   <div class="leftside-nav1">
+     <ul style="list-style-type: none">
+     <li><button type="button" class="description" onclick="description()">Опис предметного середовища</button></li>
+     <li><button type="button" class="theme" onclick="theme()">Тема, мета, місце розташування</button></li>
+     <li><button type="button" class="structure" onclick="structure()">СТРУКТУРА ДОКУМЕНТА</button></li>
+       <li>
+      <ul style="list-style-type: none">
+       <li><button type="button" class="table" onclick="table()">HTML-код ТАБЛИЦЬ</button></li>
+       <li><button type="button" class="form" onclick="f()">HTML-код ФОРМИ</button></li>
+       <li><button type="button" class="image" onclick="im()">HTML-код ЗОБРАЖЕННЯ</button></li>
+      </ul>
+       </li>
+     <li><button type="button" class="conclusions" onclick="conclusions()">ВИСНОВКИ</button></li>
+     </ul>
+   </div>
+   <div class="output">
+     <p id="output">Місце для виведення інформації</p>
+   </div>
+ </section>
+
+ <script>
+     function f(){
+       var f = document.getElementById("output");
+       f.innerHTML = `<h2>Форми</h2>
+ <div style="text-align: left">
+  <p>HTML елемент <code>&lt;form&gt;</code> визначає форму, яка використовується для збору користувацького вводу:</p>
+    <p>HTML-форма містить <strong>елементи форми</strong>.</p>
+    <p>Елементи форми - це різні типи елементів вводу, такі як текстові поля, прапорці, перемикачі, кнопки відправки і т.ін.</p>
+    <h2>Елемент &lt;input&gt;</h2>
+    <p>Елемент <code>&lt;input&gt;</code> є найбільш важливим елементом форми.</p>
+    <p>Елемент <code>&lt;input&gt;</code> може відображатися кількома способами, в залежності від атрибута <strong>type</strong>.</p>
+</div>
+<hr>
+<div style="margin: 50px">
+<h3 class="contact-us">Contact us</h3>
+ <form method="post">
+    <div class="contact-us-form-item">
+      <input id="name" type="text" name="request[name]" placeholder="Name" style="width: 50%">
+    </div>
+    <div class="contact-us-form-item">
+      <input id="email" type="text" name="request[email]" placeholder="Email" style="width: 50%">
+    </div>
+    <div class="contact-us-form-item">
+      <input id="text" type="text" name="request[text]" placeholder="Write here" style="width: 50%">
+    </div>
+  </form>
+  </div>
+  <textarea style="width: 69%; height: 300px">
+  <h2 class="contact-us">Contact us</h2>
+  <form method="post">
+    <div class="contact-us-form-item">
+      <input id="name" type="text" name="request[name]" placeholder="Name">
+    </div>
+    <div class="contact-us-form-item">
+      <input id="email" type="text" name="request[email]" placeholder="Email">
+    </div>
+    <div class="contact-us-form-item">
+      <input id="text" type="text" name="request[text]" placeholder="Write here">
+    </div>
+  </form>
+</textarea>
+`}
+
+   function description(){
+     var description = document.getElementById("output");
+     description.innerHTML = `<h1 style="text-align: left">Service for exhibition art gallery</h1>
+  <h2 style="text-align: left">Description of business logic</h2>
+  <ul style="list-style-type:square; border-color: #84001f; text-align: left">
+    <li>
+      <h3>Admin</h3>
+      <ol>
+        <li>Makes a list of exhibitions (theme, hall, period and time of operation, ticket price)</li>
+        <li>Override exposures</li>
+      </ol>
+    </li>
+    <li>
+      <h3>User</h3>
+      <ol>
+        <li>View exhibitions by topic, ticket price</li>
+        <li>Filter by the date of the event</li>
+      </ol>
+    </li>
+    <li>
+      <h3>Authorized user</h3>
+      <ol>
+        <li>Buy a ticket for the selected exhibition</li>
+      </ol>
+    </li>
+  </ul>`
+   }
+
+   function im() {
+     var im = document.getElementById("output");
+     im.innerHTML =
+       `<h2>Зображення</h2>
+        <div style="text-align: left">
+           <p>В HTML зображення визначаються за допомогою тега <code>&lt;img&gt;</code>.</p>
+    <p>Тег <code>&lt;img&gt;</code> пустий, містить лише атрибути і не має закриваючого тега.</p>
+    <p>Атрибут <code>src</code> вказує URL (веб-адресу) зображення:</p>
+       <h2 id='c2'>Атрибут alt</h2>
+    <p>Атрибут <code >alt</code> надає альтернативний текст для зображення, якщо користувач з якоїсь причини не може його переглянути: через повільне підключення до Інтернету, помилки в атрибуті src або якщо користувач використовує програму читання з екрану (скрінрідер).</p>
+    <p>Значення атрибута <code>alt</code> має описувати зображення, тобто те, що на ньому зображено:</p>
+    </div>
+    <hr>
+          <img src="../img/lab1/pic.png" alt="picture" width="282" height="193">
+          <textarea style="width: 69%; height: 70px">
+          <img src="img/pic1.png" alt="picture" width="282" height="193">
+</textarea>
+`
+   }
+   function theme(){
+     var description = document.getElementById("output");
+     description.innerHTML =
+       `<ul style="text-align: left; list-style-type:square; ">
+            <li> <h3><i> Тема: </i> Структура HTML-документа. Вибір предметної галузі.  <br> Робота з посиланнями, таблицями, зображеннями, списками в HTML-документі. </h3></li>
+            <li> <h3> <i> Мета: </i>  придбати практичні навички роботи з HTML-документом, таблицями, зображеннями, посиланнями, списками, формами <br>
+Створити шаблон звітного HTML-документом для відображення <br>
+результатів роботи всіх лабораторних робіт.
+            </h3></li>
+        </ul>`
+   }
+
+   function structure(){
+     var description = document.getElementById("output");
+     description.innerHTML=
+`<h2>Структура документа</h2>
+<textarea style="width: 69%; height: 600px"> <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Anasstezia Art Gallery</title>
+  <link rel="stylesheet" href="css/homePage.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+      <a href="homePage.html">
+        <img src="img/logo.png" alt="art gallery" width="68" height="81.75">
+      </a>
+      <ul class="nav-menu">
+        <li class="nav-link"><a href="/">NEWS</a></li>
+        <li class="nav-link"><a href="/">PROJECTS</a></li>
+        <li class="nav-link"><a href="/">ARTISTS</a></li>
+        <li class="nav-link"><a href="/">ABOUT US</a></li>
+        <li class="nav-link"><a href="/">GALLERY PUBLICATIONS</a></li>
+        <li class="nav-link"><a href="/">CONTACTS</a></li>
+      </ul>
+    </nav>
+   </div>
+  </header>
+<section class="navigation">
+   <div>
+    <dl>
+      <dt>ANASSTEZIA</dt>
+      <dd>
+        <div>
+          <img src="img/pic1.png" alt="">
+          <p>
+            ANASSTEZIA - is a refuge of modern Ukrainian art, which is developing in the conditions of
+            cultural changes in society.
+          </p>
+        </div>
+      </dd>
+    </dl>
+   </div>
+
+  </div>
+  <h2 class="contact-us">Contact us</h2>
+  <form method="post">
+    <div class="contact-us-form-item">
+      <input id="name" type="text" name="request[name]" placeholder="Name">
+    </div>
+    <div class="contact-us-form-item">
+      <input id="email" type="text" name="request[email]" placeholder="Email">
+    </div>
+    <div class="contact-us-form-item">
+      <input id="text" type="text" name="request[text]" placeholder="Write here">
+    </div>
+  </form>
+  <footer>
+    <p class="link">
+      <a href="subjectArea.html"> Description of the subject environment </a>
+    </p>
+    <p class="copyright">©2022 ANASSTEZIA</p>
+  </footer>
+ </body>
+</html> </textarea>`
+   }
+
+   function table(){
+     var table = document.getElementById("output");
+     table.innerHTML =
+       `<h2>Таблиці</h2>
+    <div style="text-align: left">
+        <p>Тег <code>&lt;table&gt;</code> визначає HTML таблицю.</p>
+    <p>Кожен рядок таблиці визначається тегом <code >&lt;tr&gt;</code>. Кожен заголовок таблиці визначається тегом <code>&lt;th&gt;</code>. Кожна чарунка з даними таблиці визначається тегом <code >&lt;td&gt;</code>.</p>
+    <p>За замовчуванням текст в елементах <code> &lt;th&gt;</code> виділений жирним шрифтом і відцентрований.</p>
+    <p>За замовчуванням текст в елементах <code> &lt;td&gt;</code> є звичайним і вирівняним за лівим краєм.</p>
+    </div>
+    <hr>
+        <div style="border: 1px solid black; ">
+    <table style="width: 100%">
+      <tr>
+        <th>Ticket type</th>
+        <th>Price</th>
+      </tr>
+      <tr>
+        <th>Standard</th>
+        <th>100</th>
+      </tr>
+      <tr>
+        <th>Student</th>
+        <th>80</th>
+      </tr>
+      <tr>
+        <th>Child ticket</th>
+        <th>50</th>
+      </tr>
+    </table>
+  </div>
+  <h3>HTML-Код таблиці</h3>
+  <div><textarea style="width: 69%; height: 400px">
+    <h3>Ticket prices</h3>
+  <div>
+    <table width="100%">
+      <tr>
+        <th>Ticket type</th>
+        <th>Price</th>
+      </tr>
+      <tr>
+        <th>Standard</th>
+        <th>100</th>
+      </tr>
+      <tr>
+        <th>Student</th>
+        <th>80</th>
+      </tr>
+      <tr>
+        <th>Child ticket</th>
+        <th>50</th>
+      </tr>
+    </table>
+    </textarea></div>
+    `
+   }
+
+   function conclusions() {
+     var conclusion = document.getElementById("output");
+     conclusion.innerHTML =
+       ` <h2>Висновки</h2>
+<p style="text-align: left">У ході виконання даної лабораторної роботи я придбала практичні навички роботи з HTML-документом, таблицями, <br>
+зображеннями, посиланнями, списками, формами. <br>
+Також мною було створено шаблон звітного HTML-документом для відображення
+результатів роботи всіх лабораторних робіт.</p>`
+   }
+  </script>
+</body>
+</html>
