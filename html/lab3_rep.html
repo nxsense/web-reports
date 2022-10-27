@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>WEB REPORT</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+<div class="header">
+  <h2> ЗВІТИ З ЛАБОРАТОРНИХ РОБІТ <br> З ДИСЦИПЛІНИ "ІНТЕРНЕТ-ТЕХНОЛОГІЇ ТА ПРОЕКТУВАННЯ WEB-ЗАСТОСУВАНЬ" </h2>
+  <h3>Студентки групи ІС-13 Лисак Анастасії Олександрівни <img src="../img/profile_ph.jpg"
+                                                               style="width:173px;height:165px;"></h3>
+</div>
+
+<div class="upper-nav">
+  <button type="button" class="lab1">Лабораторна робота №1 <a href="../html/lab1_rep.html"></a></button>
+  <button type="button" class="lab2">Лабораторна робота №2</button>
+  <button type="button" class="lab3">Лабораторна робота №3</button>
+  <button type="button" class="lab4">Лабораторна робота №4</button>
+  <button type="button" class="lab5">Лабораторна робота №5</button>
+  <button type="button" class="lab6">Лабораторна робота №6</button>
+  <button type="button" class="lab7">Лабораторна робота №7</button>
+  <button type="button" class="lab8">Лабораторна робота №8</button>
+  <button type="button" class="lab9">Лабораторна робота №9</button>
+</div>
+
+<section>
+  <div class="leftside-nav1">
+    <ul style="list-style-type: none">
+      <li>
+        <button type="button" class="description" onclick="theme()">Постановка задачі лабораторної роботи №3 <br> Розташування сайту, звіту</button>
+      </li>
+      <li>
+        <button type="button" class="task1" onclick="firstTask()"> ЗАВДАННЯ №1 <br> Зовнішній вигляд макету. <br> Код макету</button>
+      </li>
+      <li>
+        <button type="button" class="task2">ЗАВДАННЯ №2</button>
+      </li>
+      <li>
+        <ul style="list-style-type: none">
+          <li>
+            <button type="button" class="fixedTable" onclick="fixedTable()">Фіксована таблична верстка</button>
+          </li>
+          <li>
+            <button type="button" class="rubTable" onclick="rubTable()">Гумова таблична верстка</button>
+          </li>
+          <li>
+            <button type="button" class="fixedBlock" onclick="fixedBlock()">Фіксована блокова верстка</button>
+          </li>
+          <li>
+            <button type="button" class="rubBlock" onclick="rubBlock()">Гумова блокова верстка</button>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <button type="button" class="task3"> Завдання №3 "</button>
+      </li>
+      <li>
+        <ul style="list-style-type: none">
+          <li>
+            <button type="button" class="scrShot" onclick="scrShot()">Скріншот сторінки</button>
+          </li>
+          <li>
+            <button type="button" class="flexHTML" onclick="flexHTML()">HTML-код сторінки</button>
+          </li>
+          <li>
+            <button type="button" class="flexCSS" onclick="flexCSS()">CSS-код сторінки</button>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <button type="button" class="conclusions" onclick="conclusion()">ВИСНОВКИ</button>
+      </li>
+    </ul>
+  </div>
+  <div class="output" style="height: 740px">
+    <p id="output">Місце для виведення інформації</p>
+  </div>
+</section>
+
+<script>
+
+  function theme() {
+    var description = document.getElementById("output");
+    description.innerHTML =
+      `<ul style="text-align: left; list-style-type:square; ">
+            <li> <h3><i> Тема: </i> ВЕРСТКА HTML-ДОКУМЕНТУ. БЛОКОВА ВЕРСТКА. ВЕРСТКА
+ЗАСОБАМИ CSS та FLEXBOX. </h3></li>
+            <li> <h3> <i> Мета: </i>  придбати практичні навички роботи верстки сторінок засобами CSS, <br> верстки на
+основі плаваючих елементів, <br> з’ясувати переваги та недоліки типів макетів веб-
+сторінок
+            </h3></li>
+            <li><h3><i>Посилання на проект: </i> <a href="https://github.com/nxsense/web_lab">https://github.com/nxsense/web_lab</a></h3></li>
+        </ul>`
+  }
+
+  function firstTask() {
+    var lists = document.getElementById("output");
+    lists.innerHTML =
+      `<h2>Макет власного сайту: змішаний тип</h2>
+    <img src="../img/img.png" style=" width: 95%; height: 898px" alt="">
+ <hr>
+   <h2>HTML-структура</h2>
+    <textarea style="width: 69%; height: 700px">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Anasstezia Art Gallery</title>
+  <link rel="stylesheet" href="../css/homePage.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav class="navbar">
+      <a href="homePage.html">
+        <img src="../img/logo.png" alt="art gallery" width="68" height="81.75" style="margin-left: 200px">
+      </a>
+      <ul class="nav-menu">
+        <li class="nav-link"><a href="/">NEWS</a></li>
+        <li class="nav-link"><a href="/">PROJECTS</a></li>
+        <li class="nav-link"><a href="/">ARTISTS</a></li>
+        <li class="nav-link"><a href="/">ABOUT US</a></li>
+        <li class="nav-link"><a href="/">GALLERY PUBLICATIONS</a></li>
+        <li class="nav-link"><a href="/">CONTACTS</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<section class="current">
+  <div class="currentDetails">
+    <h1>Ain't nobody's business</h1>
+    <p>27 FEBRUARY - 23 MARCH, 2022</p>
+    <p>Referring to the 1994 hit by Swedish expatriate singer Ardis, <br>
+      the international exhibition "Ain't nobody's business" <br> activates the voice that wants freedom of
+      self-determination.<br></p>
+  </div>
+
+  <img src="../img/Abstractart-3.jpg" id="main-img">
+</section>
+
+<footer>
+  <p id="link">
+  <hr>
+  <a href="subjectArea.html"> Description of the subject environment </a>
+  </p>
+  <p class="copyright">©2022 ANASSTEZIA</p>
+</footer>
+</body>
+</html>
+
+</textarea>
+<h2>СSS-структура</h2>
+    <textarea style="width: 69%; height: 700px">
+    *{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  position: relative;
+  background-color: #141419;
+}
+
+header{
+  top: 0;
+  width: 100%;
+  background-color: #77250f;
+  font-size:20px;
+  float: top;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+
+.navbar{
+  width: 100%;
+  margin: auto;
+  min-height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  margin-right: 100px;
+}
+
+.nav-link, p{
+  font-family: 'Poppins', sans-serif;
+  color: whitesmoke;
+}
+
+footer{
+  float: bottom;
+  text-align: center;
+}
+
+#link {
+  margin-top: 7%;
+  text-decoration-color: #141419;
+}
+
+h1{
+  font-family: 'Playfair Display', serif;
+  color: #9E2A2B;
+}
+
+.currentDetails{
+  float: left;
+  width: 30%;
+  margin-top: 13%;
+  margin-left: 10%;
+  text-align: center;
+}
+
+.currentDetails h1{
+  font-size: xxx-large;
+}
+#main-img{
+  width: 800px;
+  height: 534px;
+  margin-top: 5%;
+}
+
+a[href^="#"] {background-color: #9E2A2B}
+@media (max-width: 1280px) {
+  .container{
+    width: 100%;
+  }
+
+}
+
+</textarea>`
+  }
+
+
+  function conclusion(){
+    var conclusion = document.getElementById("output");
+    conclusion.innerHTML =
+      `<h2>Висновки</h2>
+<p style="text-align: left">У ході виконання даної лабораторної роботи я придбала практичні навички роботи верстки сторінок засобами CSS, <br> верстки на
+основі плаваючих елементів, з’ясувала переваги та недоліки типів макетів веб-
+сторінок</p>`
+  }
+
+  function fixedTable() {
+    var fixx = document.getElementById("output");
+    fixx.innerHTML =
+      `<h2>Фіксована таблична верстка</h2>
+<img src="../img/task2_1.png" style="width=69%; height: 468px">
+<hr>
+   <h2>HTML-структура</h2>
+    <textarea style="width: 69%; height: 700px">
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Fixed table</title>
+  <link rel="stylesheet" href="css/fixedTable.css">
+</head>
+<body>
+<table  width="1800" align="center">
+  <tr>
+    <td colspan="2" class="first">1</td>
+  </tr>
+  <tr>
+    <td rowspan="2" class="second">2</td>
+    <td class="fifth">5</td>
+  </tr>
+  <tr>
+    <td class="fourth">4</td>
+  </tr>
+  <tr>
+    <td colspan="2" class="third">3</td>
+  </tr>
+
+</table>
+</body>
+</html>
+</textarea>
+<h2>СSS-структура</h2>
+    <textarea style="width: 69%; height: 700px">
+    *{
+  border-width: 7px;
+  border-color: black;
+}
+
+.first{
+  width: 100%;
+  height: 60px;
+  background-color: #780000;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+.second{
+  width: 120px;
+  height: 500px;
+  background-color: #c1121f;
+  text-align: center;
+}
+
+.fifth{
+  height: 60px;
+  width: 240px;
+  background-color: #fdf0d5;
+  text-align: center;
+}
+
+.fourth{
+  width: 240px;
+  height: 440px;
+  text-align: center;
+  background-color: #003049;
+}
+
+.third{
+  width: 100%;
+  height: 120px;
+  text-align: center;
+  background-color: #669bbc;
+}
+
+function fixedTable() {
+    var fixx = document.getElementById("output");
+    fixx.innerHTML =
+      \`<h2>Фіксована таблична верстка</h2>
+<img src="../img/task2_1.png" style="width=69%; height: 468px">
+<hr>
+   <h2>HTML-структура</h2>
+    <textarea style="width: 69%; height: 700px">
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Fixed table</title>
+  <link rel="stylesheet" href="css/fixedTable.css">
+</head>
+<body>
+<table  width="1800" align="center">
+  <tr>
+    <td colspan="2" class="first">1</td>
+  </tr>
+  <tr>
+    <td rowspan="2" class="second">2</td>
+    <td class="fifth">5</td>
+  </tr>
+  <tr>
+    <td class="fourth">4</td>
+  </tr>
+  <tr>
+    <td colspan="2" class="third">3</td>
+  </tr>
+
+</table>
+</body>
+</html>
+</textarea>
+<h2>СSS-структура</h2>
+    <textarea style="width: 69%; height: 700px">
+    *{
+  border-width: 7px;
+  border-color: black;
+}
+
+.first{
+  width: 100%;
+  height: 60px;
+  background-color: #780000;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+.second{
+  width: 120px;
+  height: 500px;
+  background-color: #c1121f;
+  text-align: center;
+}
+
+.fifth{
+  height: 60px;
+  width: 240px;
+  background-color: #fdf0d5;
+  text-align: center;
+}
+
+.fourth{
+  width: 240px;
+  height: 440px;
+  text-align: center;
+  background-color: #003049;
+}
+
+.third{
+  width: 100%;
+  height: 120px;
+  text-align: center;
+  background-color: #669bbc;
+}
+
+</textarea>
+`
+  }
+
+
+  function rubTable() {
+    var fixx = document.getElementById("output");
+    fixx.innerHTML =
+      `<h2>Гумова таблична верстка</h2>
+<img src="../img/task2_2.png" style="width=69%; height: 468px">
+<hr>
+   <h2>HTML-структура</h2>
+    <textarea style="width: 69%; height: 700px">
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Fixed table</title>
+  <link rel="stylesheet" href="css/fixedTable.css">
+</head>
+<body>
+<table  width="100%" align="center">
+  <tr>
+    <td colspan="2" class="first">1</td>
+  </tr>
+  <tr>
+    <td rowspan="2" class="second">2</td>
+    <td class="fifth">5</td>
+  </tr>
+  <tr>
+    <td class="fourth">4</td>
+  </tr>
+  <tr>
+    <td colspan="2" class="third">3</td>
+  </tr>
+
+</table>
+</body>
+</html>
+</textarea>
+<h2>СSS-структура</h2>
+    <textarea style="width: 69%; height: 700px">
+    *{
+  border-width: 7px;
+  border-color: black;
+}
+
+.first{
+  width: 100%;
+  height: 60px;
+  background-color: #780000;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+.second{
+  width: 120px;
+  height: 500px;
+  background-color: #c1121f;
+  text-align: center;
+}
+
+.fifth{
+  height: 60px;
+  width: 240px;
+  background-color: #fdf0d5;
+  text-align: center;
+}
+
+.fourth{
+  width: 240px;
+  height: 440px;
+  text-align: center;
+  background-color: #003049;
+}
+
+.third{
+  width: 100%;
+  height: 120px;
+  text-align: center;
+  background-color: #669bbc;
+}
+
+</textarea>
+`}
+
+  function fixedBlock() {
+    var fixx = document.getElementById("output");
+    fixx.innerHTML =
+      `<h2>Фіксована блочна верстка</h2>
+<img src="../img/task2_3.png" style="width=69%; height: 468px">
+<hr>
+   <h2>HTML-структура</h2>
+    <textarea style="width: 69%; height: 700px">
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blocks</title>
+  <link rel="stylesheet" href="css/fixedBlock.css">
+  </head>
+<body>
+<div class="wrap">
+  <div class="second">2</div>
+  <div class="right-side">
+    <div class="first">1</div>
+    <div class="fourth">4</div>
+    <div class="third">3</div>
+  </div>
+</div>
+
+</body>
+</html>
+
+</textarea>
+<h2>СSS-структура</h2>
+    <textarea style="width: 69%; height: 700px">
+   body{
+  margin: 0px;
+  vertical-align: center;
+}
+.second{
+  width: 200px;
+  height: 750px;
+  background-color: #f4f1de;
+  text-align: center;
+  float: left;
+}
+
+.right-side{
+  width: 1100px;
+  float: left;
+  margin-left: 100px;
+}
+
+.first{
+  height: 150px;
+  background-color: #e07a5f;
+  text-align: center;
+}
+
+.fourth{
+  height: 450px;
+  background-color: #3d405b;
+  text-align: center;
+}
+
+.third{
+  height: 150px;
+  background-color: #81b29a;
+  text-align: center;
+}
+</textarea>
+`}
+
+  function rubBlock() {
+    var fixx = document.getElementById("output");
+    fixx.innerHTML =
+      `<h2>Гумова блочна верстка</h2>
+<img src="../img/task2_3.png" style="width=69%; height: 468px">
+<hr>
+   <h2>HTML-структура</h2>
+    <textarea style="width: 69%; height: 700px">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blocks</title>
+  <link rel="stylesheet" href="css/rubBlock.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="second">2</div>
+  <div class="right-side">
+    <div class="first">1</div>
+    <div class="fourth">4</div>
+    <div class="third">3</div>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+</textarea>
+<h2>СSS-структура</h2>
+    <textarea style="width: 69%; height: 700px">
+.wrap{
+  width: 100%;
+}
+
+.second{
+  width: 25%;
+  height: 750px;
+  background-color: #f4f1de;
+  text-align: center;
+  float: left;
+}
+
+.right-side{
+  width: 65%;
+  float: left;
+  margin-left: 5%;
+}
+
+.first{
+  height: 150px;
+  background-color: #e07a5f;
+  text-align: center;
+}
+
+.fourth{
+  height: 450px;
+  background-color: #3d405b;
+  text-align: center;
+}
+
+.third{
+  height: 150px;
+  background-color: #81b29a;
+  text-align: center;
+}
+</textarea>
+`}
+
+  function scrShot()
+  {
+    var fixx = document.getElementById("output");
+    fixx.innerHTML =
+      `<h2>Скріншоти сторінки</h2>
+        <img src="../img/thirdScr1.png">
+<hr>
+ <img src="../img/thirdScr2.png">
+`}
+  function flexHTML(){
+    var fixx = document.getElementById("output");
+    fixx.innerHTML =
+      `<h2>HTML-код сторінки</h2>
+         <textarea style="width: 69%; height: 700px">
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Programming school</title>
+  <link rel="stylesheet" href="css/thirdTask.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav class="upper-navbar">
+      <ul class="nav-menu">
+        <li class="nav-link"><a href="/">Форми навчання</a></li>
+        <li class="nav-link"><a href="/">Заходи</a></li>
+        <li class="nav-link"><a href="/">Про академію</a></li>
+        <li class="nav-link"><a href="/">Контакти</a></li>
+        <li class="nav-link">
+          <div class="city-dropdown">
+            <button class="dropbtn">Міста
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="#">Київ</a>
+              <a href="#">Вінниця</a>
+              <a href="#">Харків</a>
+              <a href="#">Львів</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="container">
+  <div class="description">
+    <div class="desc">
+      <h2 style="color: #14080f">КУРСИ ПРОГРАМУВАННЯ <br> <bdi style="color: #1885a1">З 100% ГАРАНТІЄЮ</bdi> ПРАЦЕВЛАШТУВАННЯ</h2>
+      <p>З SCHOOL ти отримаєш високооплачувану роботу своєї мрії <br>Ми готуємо висококласних IT-спеціалістів</p>
+    </div>
+    <div class="title">
+      <h1><bdi style="-webkit-text-stroke: 1px #1885a1; font-size: 150px; color: transparent">ШКОЛА</bdi><br><bdi style="float: right; font-size: 62px">ПРОГРАМУВАННЯ</bdi></h1>
+    </div>
+  </div>
+</div>
+  <div class="main-info">
+    <div class="feedback">
+      <h4 style="color: #14080f">ВІДГУКИ ВІД РОБОТОДАВЦІВ</h4>
+      <h2>ПІДТВЕРДЖЕНА ЯКІСТЬ</h2>
+      <p style="color: #14080f">Школа програмування - єдина, що має відгуки від роботодавців, які входять до списку <br>
+      найкращих компаній DOU.UA. А випускники курсів з інкубатором отримують гарантії <br>
+      працевлаштування впродовж 6 місяців після успішного закінчення навчання. Але зазвичай їх <br>
+      забирають до себе наші офіційні партнери ще до закінчення курсу.</p>
+    </div>
+    <div class="partners">
+      <iframe width="560" height="315"
+              src="https://www.youtube.com/embed/rAjeTqlInM4"
+              title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+      </iframe>
+      <img src="img/partners.png" width="910px" height="244px" style="padding: 5%">
+    </div>
+    <p style="opacity: .3; width: 50%">Відгук INCORA про випускників Octen</p>
+    <div class="courses">
+      <h4 style="padding: 10px" >ПОПУЛЯРНІ НАПРЯМКИ</h4>
+      <h2>КУРСІВ ПРОГРАМУВАННЯ</h2>
+      <ul class="course-types">
+        <li class="type">
+          <img src="img/js.png">
+          <h4>JAVASCRIPT</h4>
+          <h5>Комплексний курс</h5>
+          <p>Cтартовий рівень: початковий</p>
+          <p>Тривалість: 5-11 місяців</p>
+          <p>Ціна: від 14500 грн</p>
+          <a href="http://">Детальніше</a>
+        </li>
+
+        <li class="type">
+          <img src="img/java.png" width="98" height="97.32">
+          <h4>JAVA</h4>
+          <h5>Комплексний курс</h5>
+          <p>Cтартовий рівень: початковий</p>
+          <p>Тривалість: 5-11 місяців</p>
+          <p>Ціна: від 14500 грн</p>
+          <a href="http://">Детальніше</a>
+        </li>
+
+        <li class="type">
+          <img src="img/python.png" width="98" height="97.32">
+          <h4>PYTHON</h4>
+          <h5>Комплексний курс</h5>
+          <p>Cтартовий рівень: початковий</p>
+          <p>Тривалість: 5-11 місяців</p>
+          <p>Ціна: від 14500 грн</p>
+          <a href="http://">Детальніше</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+<footer>
+  <p>2021</p>
+  <ul class="contacts">
+    <li class="contact">
+      <img src="img/facebook.png" width="60" height="60">
+    </li>
+    <li class="contact">
+      <img src="img/youtube.png" width="60" height="60">
+    </li>
+    <li class="contact">
+      <img src="img/telegram.png" width="60" height="60">
+    </li>
+    <li class="contact">
+      <img src="img/insta.png" width="60" height="60">
+    </li>
+  </ul>
+</footer>
+</body>
+</html>
+
+         </textarea>
+`
+  }
+
+  function flexCSS(){
+    var fixx = document.getElementById("output");
+    fixx.innerHTML =
+      `<h2>CSS-код сторінки</h2>
+         <textarea style="width: 69%; height: 700px">
+        *{
+  padding: 0;
+  margin: 0;
+  font-family: 'Russo One', sans-serif;
+}
+
+
+header{
+  top: 0;
+  width: 100%;
+  font-size:20px;
+  background-color: black;
+}
+
+li{
+  list-style: none;
+}
+
+
+.upper-navbar a{
+  color: whitesmoke;
+  text-decoration: none;
+  padding: 14px 16px;
+  width: 25%;
+}
+
+.upper-navbar{
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.nav-menu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  width: 90%;
+}
+
+.city-dropdown {
+  overflow: hidden;
+}
+
+.city-dropdown .dropbtn {
+  border: none;
+  outline: none;
+  padding: 14px 16px;
+  margin: 0;
+  background-color: black;
+  color: whitesmoke;
+  font-size:20px;
+}
+
+.upper-navbar a:hover, .city-dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  padding-top: 16px;
+}
+
+.dropdown-content a {
+  width: 80%;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+
+}
+.city-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.description{
+  width: 100%;
+  height: 100%;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  float: left;
+  margin-left: 5%;
+  overflow: hidden;
+}
+
+.desc{
+  width: 45%;
+}
+
+.desc h2{
+  height: 70%;
+  padding: 20px;
+}
+
+.desc p{
+  height: 30%;
+  padding: 20px;
+}
+
+.title{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.main-info{
+  width: 100%;
+  height: 100%;
+  left: 0;
+  float: left;
+  overflow: hidden;
+  text-align: center;
+  background-color: rgba(106, 158, 178, 0.15);
+}
+h4, p{
+  color: white;
+}
+
+.type a{
+  text-decoration: none;
+  color: #1885a1;
+}
+h2, h5{
+  color: #ec7e0c;
+}
+
+.feedback{
+  margin: 20px;
+}
+.feedback p{
+  padding: 20px;
+}
+
+.partners{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  align-self: center;
+}
+
+.type{
+  background-color: #14080f;
+  width: 27%;
+  margin: 3%;
+  padding: 20px;
+  border-radius: 1em;
+  border-width: medium;
+  border-color: #f4f1de;
+}
+
+.course-types{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  align-self: center;
+}
+
+.courses{
+  background-color: rgba(24, 24, 24);
+}
+
+footer{
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+footer p{
+  width: 90%;
+  background-color: #14080f;
+  border-radius: 1em;
+  padding: 1%;
+  margin: 0.5%;
+}
+
+.contacts{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  float: right;
+}
+
+.contacts img{
+  border-radius: 5em;
+  padding: 5px;
+}
+
+
+         </textarea>
+`
+  }
+</script>
+</body>
+</html>

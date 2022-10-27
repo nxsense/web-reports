@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>WEB REPORT</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+<div class="header">
+  <h2> ЗВІТИ З ЛАБОРАТОРНИХ РОБІТ <br> З ДИСЦИПЛІНИ "ІНТЕРНЕТ-ТЕХНОЛОГІЇ ТА ПРОЕКТУВАННЯ WEB-ЗАСТОСУВАНЬ" </h2>
+  <h3>Студентки групи ІС-13 Лисак Анастасії Олександрівни <img src="../img/profile_ph.jpg"
+                                                               style="width:173px;height:165px;"></h3>
+</div>
+
+<div class="upper-nav">
+  <button type="button" class="lab1">Лабораторна робота №1 <a href="html/lab1_rep.html"></a></button>
+  <button type="button" class="lab2">Лабораторна робота №2</button>
+  <button type="button" class="lab3">Лабораторна робота №3</button>
+  <button type="button" class="lab4">Лабораторна робота №4</button>
+  <button type="button" class="lab5">Лабораторна робота №5</button>
+  <button type="button" class="lab6">Лабораторна робота №6</button>
+  <button type="button" class="lab7">Лабораторна робота №7</button>
+  <button type="button" class="lab8">Лабораторна робота №8</button>
+  <button type="button" class="lab9">Лабораторна робота №9</button>
+</div>
+
+<section>
+  <div class="leftside-nav1">
+    <ul style="list-style-type: none">
+      <li>
+        <button type="button" class="description" onclick="theme()">Постановка задачі лабораторної роботи №2</button>
+      </li>
+      <li>
+        <button type="button" class="lists" onclick="lists()">СПИСКИ</button>
+      </li>
+      <li>
+        <button type="button" class="ids" onclick="ids()">ІДЕНТИФІКАТОРИ</button>
+      </li>
+      <li>
+        <button type="button" class="margin" onclick="mars()">ВІДСТУПИ</button>
+      </li>
+      <li>
+        <button type="button" class="floats" onclick="floatings()">ПЛАВАЮЧІ ЕЛЕМЕНТИ</button>
+      </li>
+      <li>
+        <button type="button" class="selectors" onclick="selectors()">СЕЛЕКТОРИ</button>
+      </li>
+      <li>
+        <ul style="list-style-type: none">
+          <li>
+            <button type="button" class="tagSelectors" onclick="tagSelectors()">Селектори тегу і класу</button>
+          </li>
+          <li>
+            <button type="button" class="others" onclick="selectors2()">Інші селектори</button>
+          </li>
+          <li>
+            <button type="button" class="selectorsGroups" onclick="selectorGroups()">Групування селекторів</button>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <button type="button" class="conclusions" onclick="conclusion()">ВИСНОВКИ</button>
+      </li>
+    </ul>
+  </div>
+  <div class="output" style="height: 740px">
+    <p id="output">Місце для виведення інформації</p>
+  </div>
+</section>
+
+<script>
+
+  function theme() {
+    var description = document.getElementById("output");
+    description.innerHTML =
+      `<ul style="text-align: left; list-style-type:square; ">
+            <li> <h3><i> Тема: </i> Каскадні таблиці стилів. Селектори .Ідентифікатори. <br>
+Стильове оформлення текстових елементів в HTML-
+документах. </h3></li>
+            <li> <h3> <i> Мета: </i>  придбати практичні навички роботи з селекторами, ідентифікаторами, <br>
+списками, різноманітними властивостями кольору і фону, зовнішними
+та внутрішними відступами, <br> плаваючими елементами, оформленням
+текстових елементів
+            </h3></li>
+        </ul>`
+  }
+
+  function lists() {
+    var lists = document.getElementById("output");
+    lists.innerHTML =
+      `<h2>HTML-списки та CSS-властивості списків</h2>
+<div style="text-align: left">
+      <p>В <strong>HTML</strong> є два основних типи списків:</p>
+      <ul>
+          <li>невпорядковані списки (<code>&lt;ul&gt;</code>) - елементи списку помічені маркерами</li>
+          <li>впорядковані списки (<code >&lt;ol&gt;</code>) - елементи списку помічені цифрами або буквами</li>
+      </ul>
+      <p>Властивості <strong>CSS</strong> списку дозволяють вам:</p>
+      <ul>
+          <li>Встановити різні маркери елементів списку для впорядкованих списків</li>
+          <li>Встановити різні маркери елементів списку для невпорядкованих списків</li>
+          <li>Встановити зображення як маркер елемента списку</li>
+          <li>Додати кольори фону в списки та елементи списку</li>
+      </ul>
+</div>
+ <hr>
+    <div class="container">
+      <nav class="navbar" style="margin: auto; min-height: 100px; display: flex; justify-content: space-between; text-align: center;">
+      <ul class="nav-menu" style="list-style: none;  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  margin-right: 100px;">
+        <li class="nav-link"><a href="/">NEWS</a></li>
+        <li class="nav-link"><a href="/">PROJECTS</a></li>
+        <li class="nav-link"><a href="/">ARTISTS</a></li>
+        <li class="nav-link"><a href="/">ABOUT US</a></li>
+        <li class="nav-link"><a href="/">GALLERY PUBLICATIONS</a></li>
+        <li class="nav-link"><a href="/">CONTACTS</a></li>
+      </ul>
+    </nav>
+   </div>
+    <textarea style="width: 69%; height: 300px">
+li{
+  list-style: none;
+}
+
+.navbar ul{
+  width: 100%;
+  margin: auto;
+  min-height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu ul{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  margin-right: 100px;
+}
+</textarea>`
+  }
+
+  function ids(){
+    var ids = document.getElementById("output");
+    ids.innerHTML =
+      `<h2>Ідентифікатори</h2>
+<div style="text-align: left">
+<p> Ідентифікатор (званий також « ID селектор ») визначає унікальне ім'я елемента, <br> яке використовується для зміни його стилю і звернення до нього через скрипти. </p>
+        <p> Синтаксис застосування ідентифікатора наступний. </p>
+        <div > #Ім'я ідентифікатора {свойство1: значення; властивість2: значення; ...} </div>
+        <p> При описі ідентифікатора спочатку вказується символ решітки (#), потім йде ім'я ідентифікатора. <br> Воно повинно починатися з латинської символу і може містити в собі символ дефіса (-) і підкреслення (_). Використання російських букв в іменах ідентифікатора неприпустимо. <br> На відміну від класів ідентифікатори повинні бути унікальні, іншими словами, зустрічатися в коді документа лише один раз. </p>
+</div>
+<hr>
+<textarea style="width: 69%; height: 150px">
+  #main-img{
+  width: 800px;
+  height: 534px;
+  margin-top: 5%;
+}
+
+  #link {
+  margin-top: 7%;
+  text-decoration-color: #141419;
+}
+</textarea>
+`
+  }
+
+  function mars(){
+    var mars = document.getElementById("output");
+    mars.innerHTML =
+      `<h2>Відступи</h2>
+    <div style="text-align: left">
+    <p>CSS властивості margin використовуються для створення простору навколо елементів за межами будь-яких визначених меж - полів (або зовнішніх відступів).</p>
+       </div>
+        <textarea style="width: 69%; height: 250px">
+        .nav-menu{
+  margin-right: 100px;
+}
+
+#link {
+  margin-top: 7%;
+}
+
+.currentDetails{
+  margin-top: 13%;
+  margin-left: 10%;
+}
+
+#main-img{
+  margin-top: 5%;
+}
+</textarea>`
+
+  }
+
+  function floatings(){
+    var f = document.getElementById("output");
+    f.innerHTML =
+      `<h2>Плаваючі елементи</h2>
+<p style="text-align: left">Властивість <code>float</code> визначає чи елементу варто бути прижатим до лівого чи правого боку.</p>
+ <textarea style="width: 69%; height: 250px">
+header{
+  float: top;
+}
+
+footer{
+  float: bottom;
+}
+
+.currentDetails{
+  float: left;
+}
+
+</textarea>`
+  }
+
+  function conclusion(){
+    var conclusion = document.getElementById("output");
+    conclusion.innerHTML =
+      `<h2>Висновки</h2>
+<p style="text-align: left">У ході виконання даної лабораторної роботи я придбала практичні навички роботи з селекторами, ідентифікаторами, <br>
+списками, різноманітними властивостями кольору і фону, зовнішними
+та внутрішними відступами, <br> плаваючими елементами, оформленням
+текстових елементів</p>`
+  }
+
+  function selectors(){
+    var selectors = document.getElementById("output");
+    selectors.innerHTML =
+      `<h2>Селектори</h2>
+        <p style="text-align: left">CSS селектори використовуються для "пошуку" (або вибору) HTML-елементів, які ви хочете стилізувати.</p>
+       <p style="text-align: left">Можна розділити CSS селектори на п&#8217;ять категорій:</p>
+    <ul style="text-align: left">
+      <li>Прості селектори (вибір елементів на основі імені, ідентифікатору, класу)</li>
+      <li>Комбінаторні селектори (вибір елементів на основі визначених відношень між ними)</li>
+      <li>Селектори псевдокласів (вибір елементів на основі визначеного стану)</li>
+      <li>Селектори псевдоелементів (вибір і стилізація частини елемента)</li>
+      <li>Селектори атрибутів (вибір елементів на основі атрибуту або значення атрибуту)</li>
+    </ul>`
+  }
+
+  function tagSelectors(){
+    var selectors = document.getElementById("output");
+    selectors.innerHTML =
+      `<h2>CSS селектор id</h2>
+    <p style="text-align: left">Селектор id використовує атрибут <code>id</code> HTML елемента для вибору визначеного елемента.</p>
+    <p style="text-align: left">Ідентифікатор (id) елементу є унікальним на сторінці, тому селектор <code>id</code> використовується для вибору одного унікального елемента!</p>
+<hr>
+<textarea style="width: 69%; height: 250px">
+    #main-img{
+  width: 800px;
+  height: 534px;
+  margin-top: 5%;
+}
+
+#link {
+  margin-top: 7%;
+  text-decoration-color: #141419;
+}
+</textarea>
+ <h2>CSS селектор class</h2>
+    <p style="text-align: left">Селектор <code>class</code> обирає HTML елементи з визначеним атрибутом класу.</p>
+    <p style="text-align: left">Щоб обрати елементи з визначеним класом, введіть символ крапки (.), а потім ім&#8217;я класу.</p>
+    <hr>
+    <textarea style="width: 69%; height: 250px">
+    .navbar{
+  width: 100%;
+  margin: auto;
+  min-height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  margin-right: 100px;
+}
+.currentDetails{
+  float: left;
+  width: 30%;
+  margin-top: 13%;
+  margin-left: 10%;
+  text-align: center;
+}
+</textarea>
+    <h2>Cелектори тегу</h2>
+    <textarea style="width: 69%; height: 500px">
+body{
+  position: relative;
+  background-color: #141419;
+}
+
+header{
+  top: 0;
+  width: 100%;
+  background-color: #77250f;
+  font-size:20px;
+  float: top;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  color: whitesmoke;
+  text-decoration: none;
+}
+</textarea>
+`
+  }
+
+    function selectors2() {
+      var selectors2 = document.getElementById("output");
+      selectors2.innerHTML = `<h2>Універсальний CSS селектор</h2>
+    <p "text-align: left">Універсальний селектор <code>(*)</code> виділяє всі елементи HTML на сторінці.</p>
+<hr>
+<textarea style="width: 69%; height: 150px">
+*{
+  padding: 0;
+  margin: 0;
+}
+*{
+  font-family: Gill Sans, sans-serif;
+  color: #366B50;
+}
+</textarea>
+<h2>Селектор атрибутів</h2>
+<textarea style="width: 69%; height: 150px">
+a[href^="#"] {background-color: #9E2A2B}
+</textarea>
+`}
+
+  function selectorGroups() {
+    var selectorGroups = document.getElementById("output");
+    selectorGroups.innerHTML =
+      `<h2>Групування селекторів</h2>
+ <p style="text-align: left">Щоб згрупувати селектори, розділяйте кожен селектор комою.</p>
+ <textarea style="width: 69%; height: 400px">
+.nav-link, p{
+  font-family: 'Poppins', sans-serif;
+  color: whitesmoke;
+}
+
+h1, h2, h3, code{
+  text-shadow: 3px 3px 3px #6C9;
+}
+</textarea>
+          `}
+
+</script>
+</body>
+</html>
